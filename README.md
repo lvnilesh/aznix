@@ -1,6 +1,13 @@
 ```
-git clone 
+git clone git@github.com:lvnilesh/aznix.git
+cd aznix
 sudo nixos-generate-config --show-hardware-config > hardware-configuration.nix
+
+find /nix/store -name bootctl | head -1
+sudo $(find /nix/store -name bootctl | head -1) install --path=/boot
+ls -la /nix/store/*grub*/share/grub/ 2>/dev/null
+
+
 sudo nixos-rebuild switch --flake .#aznix
 
 
