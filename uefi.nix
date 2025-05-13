@@ -2,15 +2,17 @@
 
 {
   boot.loader = {
-    systemd-boot = {
-      enable = true;
-      configurationLimit = 20;  # Limit the number of generations shown in the boot menu
-    };
     efi = {
       canTouchEfiVariables = true;
-      efiSysMountPoint = "/boot";  # This should match your EFI system partition mount point
+      efiSysMountPoint = "/boot";
     };
-    # Explicitly disable GRUB
-    grub.enable = false;
+    
+    # Use GRUB but with EFI support
+    grub = {
+      enable = true;
+      efiSupport = true;
+      device = "nodev";  # Important for EFI - don't install to a specific device
+      useOSProber = true;
+    };
   };
 }
