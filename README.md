@@ -1,4 +1,8 @@
 ```
+
+sudo nixos-generate-config --show-hardware-config
+
+
 cd /home/cloudgenius/nixos-cloud-deploy
 
 
