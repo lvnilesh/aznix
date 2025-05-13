@@ -1,3 +1,4 @@
+```
 cd /home/cloudgenius/nixos-cloud-deploy
 
 
@@ -38,3 +39,4 @@ echo $fqdn
 # ssh -o 'UserKnownHostsFile=/dev/null' -o 'StrictHostKeyChecking=no' root@"$fqdn" uname -a
 
 # nix run github:nix-community/nixos-anywhere -- --flake $tempnix#aznix --generate-hardware-config nixos-facter $tempnix/facter.json root@"$fqdn"
+```
