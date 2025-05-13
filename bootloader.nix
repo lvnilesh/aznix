@@ -1,9 +1,9 @@
 { config, lib, pkgs, ... }: {
-  # Clear any conflicting boot loader settings
-  boot.loader.grub.enable = lib.mkForce false;
-  
   # Configure systemd-boot
   boot.loader = {
+    # Disable GRUB completely
+    grub.enable = lib.mkForce false;
+    
     systemd-boot = {
       enable = true;
       configurationLimit = 20;
@@ -14,6 +14,18 @@
     };
   };
   
+  # This is the fix - need to run this one time in Azure
+  # sudo $(find /nix/store -name bootctl | head -1) install --path=/boot
+
+  # The below activation script forcibly install systemd-boot
+  system.activationScripts.installBootLoader = {
+    deps = [];
+    text = ''
+      echo "Forcibly installing systemd-boot to ESP..."
+      ${pkgs.systemd}/bin/bootctl install --path=/boot
+    '';
+  };
+  
   # Fix permissions on /boot to address the warnings
-  fileSystems."/boot".options = [ "umask=0077" ];
+  fileSystems."/boot".options = lib.mkDefault [ "umask=0077" ];
 }
