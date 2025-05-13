@@ -1,7 +1,11 @@
 ```
 
 sudo nixos-generate-config --show-hardware-config
+sudo nixos-rebuild switch --flake .#aznix
 
+
+
+###
 
 cd /home/cloudgenius/nixos-cloud-deploy
 
