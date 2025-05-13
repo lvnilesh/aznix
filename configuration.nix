@@ -13,11 +13,11 @@ in {
     (modulesPath + "/profiles/qemu-guest.nix")
   ];
 
-  boot.loader.grub = {
-#    devices = [ "/dev/disk/by-uuid/8973-FC44" ];
-    efiSupport = true;
-    efiInstallAsRemovable = true;
-  };
+#  boot.loader.grub = {
+# #    devices = [ "/dev/disk/by-uuid/8973-FC44" ];
+#    efiSupport = true;
+#    efiInstallAsRemovable = true;
+#  };
 
   networking.hostName = hostname;
 
