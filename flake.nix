@@ -1,6 +1,5 @@
 {
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-  inputs.disko.inputs.nixpkgs.follows = "nixpkgs";
 
   outputs =
     {
