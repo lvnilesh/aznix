@@ -18,7 +18,7 @@
         modules = [
           ./configuration.nix
           ./hardware-configuration.nix
-          ./uefi.nix
+          ./bootloader.nix
         ];
       };
     };
