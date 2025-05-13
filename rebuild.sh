@@ -10,3 +10,4 @@ sudo "$(find /nix/store -name bootctl | head -1)" install --path=/boot
 
 echo "Rebuilding NixOS..."
 sudo nixos-rebuild switch --flake ~/aznix#aznix "$@"
+# sudo nixos-rebuild switch --flake github:lvnilesh/aznix#aznix "$@"
