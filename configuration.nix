@@ -14,7 +14,7 @@ in {
   ];
 
   boot.loader.grub = {
-    devices = [ "/dev/disk/by-uuid/8973-FC44" ];
+#    devices = [ "/dev/disk/by-uuid/8973-FC44" ];
     efiSupport = true;
     efiInstallAsRemovable = true;
   };
