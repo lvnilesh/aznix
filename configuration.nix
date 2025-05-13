@@ -12,9 +12,9 @@ in {
     (modulesPath + "/installer/scan/not-detected.nix")
     (modulesPath + "/profiles/qemu-guest.nix")
   ];
+
   boot.loader.grub = {
-    # no need to set devices, disko will add all devices that have a EF02 partition to the list already
-    # devices = [ ];
+    devices = [ "/dev/disk/by-uuid/8973-FC44" ];
     efiSupport = true;
     efiInstallAsRemovable = true;
   };
