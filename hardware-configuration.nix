@@ -6,18 +6,18 @@
 {
   imports = [ ];
 
-  boot.initrd.availableKernelModules = [ "sd_mod" ];
+  boot.initrd.availableKernelModules = [ "sd_mod" "sr_mod" ];
   boot.initrd.kernelModules = [ "dm-snapshot" ];
   boot.kernelModules = [ ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/78b95859-b8b3-44f2-ae79-1d2f7eadd9ab";
+    { device = "/dev/disk/by-uuid/cdbef3c5-1958-4145-9296-28015fe12f02";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/E6C3-5C16";
+    { device = "/dev/disk/by-uuid/BFB6-6F50";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
