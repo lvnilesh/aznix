@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   programs.zsh = {
     enable = true;
-    # autosuggestion.enable = true;
+    autosuggestion.enable = true;
     enableCompletion = true;
     syntaxHighlighting.enable = true;
     oh-my-zsh = {
@@ -58,8 +58,8 @@
       glo = "git log --oneline";
 
       # System
-      rebuild = "sudo nixos-rebuild switch --flake ~/aznix#aznix"; # Change hostname
-      update = "cd ~/aznix && nix flake update && sudo nixos-rebuild switch --flake .#aznix"; # Change hostname
+      rebuild = "sudo nixos-rebuild switch --flake ~/nixos-config#asus"; # Change hostname
+      update = "cd ~/nixos-config && nix flake update && sudo nixos-rebuild switch --flake .#asus"; # Change hostname
 
       # Other helpful aliases
       cat = "bat";
@@ -71,8 +71,15 @@
       # Add your custom aliases here
     };
 
+    history = {
+      save = 10000;
+      size = 10000;
+    };
+    envExtra = ''
+      export ZOMEZSHVARIABLE="something";
+    '';
     # Add code to run near the end of zsh initialization
-    initExtra = ''
+    initContent = ''
 
       # Enable Powerlevel10k instant prompt
       if [[ -r "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh" ]]; then

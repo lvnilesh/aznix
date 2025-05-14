@@ -54,4 +54,11 @@
 # NETDEV=$(ip -o route get 8.8.8.8 | cut -f 5 -d " ")
 # sudo ethtool -K $NETDEV rx-udp-gro-forwarding on rx-gro-list off
 # sudo tailscale up --advertise-routes=192.168.1.0/24,192.168.20.0/24,192.168.30.0/24,192.168.40.0/24,10.0.0.0/24 --advertise-exit-node
+#
+# sudo systemctl restart  tailscaled.service
+# sudo systemctl start    tailscaled.service
+# sudo systemctl stop     tailscaled.service
+# sudo systemctl status   tailscaled.service
+# sudo journalctl -xeu    tailscaled.service
+# tailscale status
 

@@ -1,6 +1,7 @@
 {
   imports = [
     ./autojump
+    ./azureagent
     # ./cloudflared
     ./mongo
     ./starship

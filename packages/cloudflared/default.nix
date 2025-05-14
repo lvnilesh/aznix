@@ -40,3 +40,4 @@
 #   # - hostname: hls.cloudgenius.app
 #   #   service: http://multistream:1935
 #   - service: http_status:404
+
