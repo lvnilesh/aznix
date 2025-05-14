@@ -28,4 +28,15 @@
 # sudo systemctl status cloudflared-tunnel
 # # View logs
 # sudo journalctl -u cloudflared-tunnel
-
+#
+# # config.yaml
+# # tunnel: backend
+# tunnel: 563f6d5c-4867-404c-9293-506697172ed1
+# credentials-file: /home/cloudgenius/coursebook/cloudflared/563f6d5c-4867-404c-9293-506697172ed1.json
+# origincert: /home/cloudgenius/coursebook/cloudflared/cert.pem
+# ingress:
+#   - hostname: backend.cloudgenius.app
+#     service: http://coursebook:3003
+#   # - hostname: hls.cloudgenius.app
+#   #   service: http://multistream:1935
+#   - service: http_status:404
