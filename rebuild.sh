@@ -5,6 +5,16 @@ echo "Updating hardware configuration..."
 sudo nixos-generate-config --show-hardware-config > ~/aznix/hardware-configuration.nix
 echo "Hardware configuration updated."
 
+# Autoformat your nix files
+# Check if alejandra exists in PATH
+if command -v alejandra &>/dev/null; then
+  echo "Alejandra found, formatting..."
+  alejandra . &>/dev/null \
+    || ( alejandra . ; echo "formatting failed!" && exit 1)
+else
+  echo "Alejandra not found, skipping formatting..."
+fi
+
 echo "Finding bootctl binary...the operation to find bootctl in nix store takes some time"
 # sudo "$(find /nix/store -name bootctl | head -1)" install --path=/boot
 

@@ -11,13 +11,14 @@ in {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
     (modulesPath + "/profiles/qemu-guest.nix")
+    ./packages
   ];
 
-#  boot.loader.grub = {
-# #    devices = [ "/dev/disk/by-uuid/8973-FC44" ];
-#    efiSupport = true;
-#    efiInstallAsRemovable = true;
-#  };
+  #  boot.loader.grub = {
+  # #    devices = [ "/dev/disk/by-uuid/8973-FC44" ];
+  #    efiSupport = true;
+  #    efiInstallAsRemovable = true;
+  #  };
 
   networking.hostName = hostname;
 
@@ -28,6 +29,8 @@ in {
       PasswordAuthentication = false;
     };
   };
+
+  nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
     curl
