@@ -1,4 +1,5 @@
 ```
+ssh aznix.westus.cloudapp.azure.com
 git clone git@github.com:lvnilesh/aznix.git
 cd aznix
 sudo nixos-generate-config --show-hardware-config > hardware-configuration.nix
