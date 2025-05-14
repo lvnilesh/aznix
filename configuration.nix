@@ -11,7 +11,6 @@ in {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
     (modulesPath + "/profiles/qemu-guest.nix")
-    ./packages
   ];
 
   #  boot.loader.grub = {
@@ -46,17 +45,24 @@ in {
     experimental-features = "nix-command flakes";
     auto-optimise-store = true;
   };
+  # for global user
+  users.defaultUserShell = pkgs.zsh;
 
   users.users."${username}" = {
     isNormalUser = true;
     home = "/home/${username}";
     description = "";
+    shell = pkgs.zsh;
     openssh.authorizedKeys.keys = [
       pubkey
     ];
-    extraGroups = ["wheel"];
+    extraGroups = [
+      "wheel" # Enable ‘sudo’ for the user.
+      "networkmanager"
+      "input"
+    ];
   };
-
+  programs.zsh.enable = true;
   security.sudo.extraRules = [
     {
       users = [username];

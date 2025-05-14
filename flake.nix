@@ -15,6 +15,7 @@
         ./bootloader.nix
         ./modules/vscode-server.nix
         ./modules/apps.nix
+        ./packages
       ];
     };
   };

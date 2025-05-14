@@ -22,6 +22,17 @@
       alejandra
       unrar
       ffmpeg
+      lsof
+      jq
+      fzf
+      bash-completion
+
+      # node lts/iron
+      nodejs_20
+      yarn
+      pm2
+      # cloudflared
+      tldr
 
       # Core Rust toolchain
       rustup
