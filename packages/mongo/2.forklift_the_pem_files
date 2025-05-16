@@ -1,0 +1,5 @@
+sudo chown -R mongodb:mongodb /home/cloudgenius/mongo-tls
+sudo cp /home/cloudgenius/mongo-tls/mongodb.pem /var/db/mongodb
+sudo cp /home/cloudgenius/mongo-tls/ca.pem /var/db/mongodb
+
+# scp -r aznix://home/cloudgenius/mongo-tls/ca.pem /home/cloudgenius/mongo-tls

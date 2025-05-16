@@ -12,6 +12,13 @@
     initialRootPasswordFile = "${pkgs.writeText "mongopasswordfile" "123"}";
     package = pkgs.mongodb; # Or specify a specific version if needed
     extraConfig = ''
+      # net:
+      #   tls:
+      #     mode: requireTLS
+      #     certificateKeyFile: /var/db/mongodb/mongodb.pem
+      #     CAFile: /var/db/mongodb/ca.pem
+      #     allowConnectionsWithoutCertificates: false
+      #     disabledProtocols: TLS1_0,TLS1_1
     '';
   };
 

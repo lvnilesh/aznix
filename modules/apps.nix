@@ -42,6 +42,7 @@
       (rustPlatform.rustLibSrc) # Add the source component
 
       mongosh
+      openssl
 
       # Essential development tools
       rustfmt # Code formatter

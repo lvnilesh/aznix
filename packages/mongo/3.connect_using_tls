@@ -1,0 +1,4 @@
+mongosh --host localhost --port 27017 --authenticationDatabase admin \
+  --tls \
+  --tlsCAFile /home/cloudgenius/mongo-tls/ca.pem \
+  -u nilesh -p
