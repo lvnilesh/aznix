@@ -41,6 +41,8 @@
       gcc
       (rustPlatform.rustLibSrc) # Add the source component
 
+      mongosh
+
       # Essential development tools
       rustfmt # Code formatter
       clippy # Linter

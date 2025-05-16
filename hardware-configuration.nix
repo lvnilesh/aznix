@@ -20,15 +20,15 @@
     fsType = "ext4";
   };
 
-  fileSystems."/mnt/resource" = {
-    device = "/dev/disk/by-uuid/667bb570-959c-4046-a4d6-809f70f99725";
-    fsType = "ext3";
-  };
-
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/4856-9691";
     fsType = "vfat";
     options = ["fmask=0022" "dmask=0022"];
+  };
+
+  fileSystems."/mnt/resource" = {
+    device = "/dev/disk/by-uuid/667bb570-959c-4046-a4d6-809f70f99725";
+    fsType = "ext3";
   };
 
   swapDevices = [];
