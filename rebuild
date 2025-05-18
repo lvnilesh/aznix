@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 set -e
 
+if [ ! -f /etc/nixos/hardware-configuration.nix ]; then
+  echo "system hardware-configuration.nix not found in /etc/nixos, generating..."
+  sudo nixos-generate-config
+fi
+
 echo "Updating hardware configuration..."
 sudo nixos-generate-config --show-hardware-config > ~/aznix/hardware-configuration.nix
 echo "Hardware configuration updated."
